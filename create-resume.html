@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./Images/resumes icon.png" type="image/x-icon">
+    <title>Create Resume</title>
+</head>
+
+<body>
+    <div class="container my-5">
+  <div class="row">
+    <!-- Left side: Create Resume Form -->
+    <div class="col-lg-6 mb-4">
+      <div class="card shadow-sm p-4">
+        <h2 class="text-center mb-4">Create Resume</h2>
+        <form id="resumeForm">
+          <!-- Full Name -->
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+          </div>
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+          <!-- Country -->
+          <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control" id="country" placeholder="Enter your country" required>
+          </div>
+          <!-- City -->
+          <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city" placeholder="Enter your city" required>
+          </div>
+          <!-- Profession -->
+          <div class="mb-3">
+            <label for="profession" class="form-label">Profession</label>
+            <input type="text" class="form-control" id="profession" placeholder="Enter your profession" required>
+          </div>
+          <!-- Education -->
+          <div class="mb-3">
+            <label for="education" class="form-label">Education</label>
+            <input type="text" class="form-control" id="education" placeholder="Enter your education" required>
+          </div>
+          <!-- Experience -->
+          <div class="mb-3">
+            <label for="experience" class="form-label">Experience</label>
+            <input type="text" class="form-control" id="experience" placeholder="Enter your experience" required>
+          </div>
+          <!-- Skills -->
+          <div class="mb-3">
+            <label for="skills" class="form-label">Skills</label>
+            <input type="text" class="form-control" id="skills" placeholder="Enter your skills" required>
+          </div>
+          <!-- Languages -->
+          <div class="mb-3">
+            <label for="languages" class="form-label">Languages</label>
+            <input type="text" class="form-control" id="languages" placeholder="Enter languages you know" required>
+          </div>
+          <!-- Conclusion -->
+          <div class="mb-3">
+            <label for="conclusion" class="form-label">Conclusion</label>
+            <textarea class="form-control" id="conclusion" rows="3" placeholder="Write a short conclusion" required></textarea>
+          </div>
+          <!-- Submit Button -->
+          <div class="d-grid">
+            <button type="submit" class="btn btn-dark">Submit Resume</button>
+          </div>
+          <input type="hidden" id="resumeId">
+        </form>
+      </div>
+    </div>
+
+    <!-- Right side: 4 template options -->
+    <div class="col-lg-6">
+      <h4 style="color:#fff; margin-bottom:15px;">Select Template</h4>
+      <div id="templatesRow" class="row g-3">
+        <div class="col-6">
+          <div class="template-box template1 p-2" onclick="applyTemplate(1)">
+            <h5>Classic</h5>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="template-box template2 p-2" onclick="applyTemplate(2)">
+            <h5>Modern</h5>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="template-box template3 p-2" onclick="applyTemplate(3)">
+            <h5>Minimalist</h5>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="template-box template4 p-2" onclick="applyTemplate(4)">
+            <h5>Professional</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Resume Preview -->
+      <div id="liveResume" class="resume p-3 mt-3" style="background:#1c1c1c; color:#eee; border-radius:12px; min-height:350px;">
+        <h3 id="resName">Full Name</h3>
+        <p id="resEmail">Email: user@example.com</p>
+        <p id="resLocation">City, Country</p>
+        <hr>
+        <h4>Profile Summary</h4>
+        <p id="resSummary">Your profile summary...</p>
+        <h4>Education</h4>
+        <p id="resEducation">B.Sc, University XYZ, 2025</p>
+        <h4>Experience</h4>
+        <p id="resExperience">Frontend Developer at ABC, 2024-2025</p>
+        <h4>Skills</h4>
+        <p id="resSkills">HTML, CSS, JS, React</p>
+        <h4>Languages</h4>
+        <p id="resLanguages">English, Urdu</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Links -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
